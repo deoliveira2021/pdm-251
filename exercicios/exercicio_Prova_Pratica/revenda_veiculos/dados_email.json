@@ -1,0 +1,12 @@
+{
+  "conta_email": {
+    "nome": "seuemail",
+    "senha": "suas senha"
+  },
+  "informacoes_adicionais": {
+    "provedor": "ProvedorExemplo",
+    "nome_exibicao": "Usuário Exemplo",
+    "data_criacao": "2023-01-15",
+    "ultimo_acesso": "2023-11-20T14:30:00Z"
+  }
+}
