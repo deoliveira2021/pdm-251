@@ -168,7 +168,6 @@ Future<void> enviarPorEmail(String jsonString) async {
 
     final smtpServer = gmail(conta.email!, conta.senha!);
 
-    // Em produção, você poderia usar:
     final message =
         Message()
           ..from = Address(conta.email!)
@@ -199,15 +198,6 @@ Future<void> enviarPorEmail(String jsonString) async {
   } catch (e) {
     print('Falha ao carregar a conta de email: $e');
   }
-
-  // Em produção, você poderia usar:
-  // final message = Message()
-  //   ..from = Address('seuemail@exemplo.com')
-  //   ..recipients.add('taveira@ifce.edu.br')
-  //   ..subject = 'Dados do Sistema de Revenda'
-  //   ..text = jsonString;
-  //
-  // await send(message, smtpServer);
 }
 
 class ContaEmail {
