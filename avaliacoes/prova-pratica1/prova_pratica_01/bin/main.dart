@@ -67,14 +67,14 @@ void main() {
 
 void enviarPorEmail(String jsonString) async {
 // Configurar servidor SMTP do Gmail
-  final email = '';
-  final password = '';
+  final email = 'seuemail@seuprovedor.com.br';
+  final password = 'suasenha';
   final smtpServer = gmail(email, password);
   
   // Criar mensagem
   final message = Message()
-    ..from = Address(email, '')
-    ..recipients.add('')
+    ..from = Address(email, 'Nome para ser exibido no e-mail')
+    ..recipients.add('destinatário@provedor.com.br')
     ..subject = 'Prova prática 01'
     ..text = jsonString;
 
