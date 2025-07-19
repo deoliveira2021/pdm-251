@@ -1,0 +1,30 @@
+class TelaPrincipal extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final total = context.watch<Carrinho>().total;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Carrinho'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Total: R\$ $total', style: TextStyle(fontSize: 24)),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ListaItens()),
+                );
+              },
+              child: Text('Adicionar Itens'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

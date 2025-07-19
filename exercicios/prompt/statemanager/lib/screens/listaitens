@@ -1,0 +1,32 @@
+class ListaItens extends StatelessWidget {
+  final List<Item> itensDisponiveis = [
+    Item(nome: 'Item 1', valor: 10.0),
+    Item(nome: 'Item 2', valor: 20.0),
+    Item(nome: 'Item 3', valor: 30.0),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista de Itens'),
+      ),
+      body: ListView.builder(
+        itemCount: itensDisponiveis.length,
+        itemBuilder: (context, index) {
+          final item = itensDisponiveis[index];
+          return ListTile(
+            title: Text(item.nome),
+            subtitle: Text('R\$ ${item.valor}'),
+            trailing: IconButton(
+              icon: Icon(Icons.add_shopping_cart),
+              onPressed: () {
+                context.read<Carrinho>().adicionar(item);
+              },
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
